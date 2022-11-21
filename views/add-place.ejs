@@ -1,0 +1,45 @@
+<%- include('./partials/header') %>
+
+<div class="bg-image">
+  <img
+    src="https://mdbcdn.b-cdn.net/img/new/slides/034.webp"
+    class="w-100"
+    alt="Background"
+  />
+  <div class="mask mask-custom">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+      <h1 class="text-white fw-bold">Add New Place</h1>
+    </div>
+  </div>
+</div>
+
+<section id="forms" class="pt-5">
+  <form id="addPlaceForm">
+    <select id="selectCategory" class="form-select mb-3">
+      <option selected>Choose category</option>
+
+      <!-- put all categories in selectCategory -->
+      <% for (let i=0 ; i<titleCategory.length ; i++) { %>
+        <option value="<%= titleCategory[i] %>"><%= titleCategory[i] %></option>
+      <% } %>
+
+    </select>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" required disabled>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" required disabled></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label">Image</label>
+      <input type="file" class="form-control" id="img" accept="image/*" required disabled>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <p id="formResponse"></p>
+  </form>
+</section>
+
+<script><%- include('../public/javascripts/add-place.js') %></script>
+<%- include('./partials/footer') %>

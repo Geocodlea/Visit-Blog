@@ -1,0 +1,48 @@
+<%- include('./partials/header') %>
+
+<div class="bg-image">
+  <img id="imgPlace"
+    src="/images/<%= imagePlace %>"
+    class="w-100"
+    alt="Background"
+  />
+  <div class="mask mask-custom">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+      <h1 id="titlePlace" class="text-white fw-bold"><%= titlePlace %></h1>
+    </div>
+  </div>
+</div>
+
+<section id="categories" class="pt-5">
+  <p id="descriptionPlace"><%= descriptionPlace %></p>
+  <p id="datePlace" class="text-end"><%= datePlace %></p>
+</section>
+
+<script>let titlePlace = "<%= titlePlace %>"</script>
+
+<section id="forms">
+  <div class="d-flex flex-wrap justify-content-around">
+    <button id="editPlaceBtn" class="btn btn-primary card-space">Edit Place</button>
+    <button id="deletePlaceBtn" class="btn btn-primary card-space">Delete Place</button>
+    <p id="deleteFormResponse"></p>
+  </div>
+  <form id="editPlaceForm" hidden>
+    <div class="mb-3">
+      <label for="title" class="form-label">Change Title</label>
+      <input type="text" class="form-control" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Change Description</label>
+      <textarea class="form-control" id="description"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label">Change Image</label>
+      <input type="file" class="form-control" id="img" accept="image/*">
+    </div>
+    <button id="submitChanges" type="submit" class="btn btn-primary">Submit</button>
+    <p id="formResponse"></p>
+  </form>
+</section>
+
+<script><%- include('../public/javascripts/place.js') %></script>
+<%- include('./partials/footer') %>

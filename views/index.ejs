@@ -1,0 +1,102 @@
+<%- include('./partials/header') %>
+
+<div class="bg-image">
+  <img
+    src="https://mdbcdn.b-cdn.net/img/new/slides/034.webp"
+    class="w-100"
+    alt="Background"
+  />
+  <div class="mask mask-custom">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+      <h1 class="text-white fw-bold">Best Places in Romania</h1>
+    </div>
+  </div>
+</div>
+
+<section id="forms" class="pt-5">
+  <div class="d-flex flex-wrap justify-content-around">
+    <button id="addCategoryBtn" class="btn btn-primary card-space">Add Category</button>
+    <a href="/category/place/add-place" class="btn btn-primary card-space">Add Place</a>
+    <a href="/category/place/edit-place" class="btn btn-primary card-space">Edit Place</a>
+  </div>
+
+  <form id="addCategoryForm" hidden>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label">Image</label>
+      <input type="file" class="form-control" id="img" accept="image/*" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <p id="formResponse"></p>
+  </form>
+
+</section>
+
+<section id="categories">
+  <h2 class="text-center fw-bold">All Places</h2>
+
+  <div class="row">
+
+    <% for (let i=0 ; i<titleCategory.length  ; i++) { %>
+
+      <div class="col-md-4 card-space">
+        <div class="card h-100">
+          <img src="/images/<%= imageCategory[i] %>" class="card-img-top" alt="<%= imageCategory[i] %>">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-title"><%= titleCategory[i] %></h4>
+              <h4 class="card-title"><%= nrPlaces[i] %></h4>
+            </div>
+            <p class="card-text"><%= shortDescription[i] %></p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="/category/<%= idCategory[i] %>" class="btn btn-primary"><%= titleCategory[i] %></a>
+          </div>
+        </div>
+      </div>
+
+    <% } %>
+
+  </div>
+</section>
+
+<section id="last-places-inserted">
+  <h2 class="text-white text-center fw-bold">Last Places Introduced</h2>
+
+  <div class="card-group">
+
+    <% for (let i=0 ; i<3  ; i++) { %>
+
+      <div class="card h-100">
+        <div class="card-body">
+          <h4 class="card-title"><%= titlePlace[i] %></h4>
+          <p class="card-text"><%= datePlace[i] %></p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="/category/place/<%= idPlace[i] %>" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+
+    <% } %>
+      
+  </div>
+</section>
+
+<script>
+  const titlePlaceLength = <%= titlePlace.length %>
+
+  if(titlePlaceLength < 3){
+    document.getElementById('last-places-inserted').classList.add('last-places-inserted-hidden')
+  }
+</script>
+
+<script><%- include('../public/javascripts/add-category.js') %></script>
+<%- include('./partials/footer.ejs') %>
+

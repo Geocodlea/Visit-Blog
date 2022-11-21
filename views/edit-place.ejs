@@ -1,0 +1,52 @@
+<%- include('./partials/header') %>
+
+<div class="bg-image">
+  <img
+    src="https://mdbcdn.b-cdn.net/img/new/slides/034.webp"
+    class="w-100"
+    alt="Background"
+  />
+  <div class="mask mask-custom">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+      <h1 class="text-white fw-bold">Edit Place</h1>
+    </div>
+  </div>
+</div>
+
+<section id="forms" class="pt-5">
+  <form id="editPlaceForm">
+    <select id="selectCategory" class="form-select mb-3">
+      <option selected>Choose category</option>
+
+      <!-- put all categories in selectCategory -->
+      <% for (let i=0 ; i<titleCategory.length ; i++) { %>
+        <option value="<%= titleCategory[i] %>"><%= titleCategory[i] %></option>
+      <% } %>
+
+    </select>
+
+    <script>let allPlaces = <%- allPlaces %> </script>
+
+    <select id="selectPlace" class="form-select mb-3" disabled>
+      <option selected>Choose place</option>
+    </select>
+
+    <div class="mb-3">
+      <label for="title" class="form-label">Change Title</label>
+      <input type="text" class="form-control" id="title" disabled>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Change Description</label>
+      <textarea class="form-control" id="description" disabled></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label">Change Image</label>
+      <input type="file" class="form-control" id="img" accept="image/*" disabled>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <p id="formResponse"></p>
+  </form>
+</section>
+
+<script><%- include('../public/javascripts/place.js') %></script>
+<%- include('./partials/footer') %>

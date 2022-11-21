@@ -1,0 +1,70 @@
+<%- include('./partials/header') %>
+
+<div class="bg-image">
+  <img id="imgCategory"
+    src="/images/<%= imageCategory %>"
+    class="w-100"
+    alt="Background"
+  />
+  <div class="mask mask-custom">
+    <div class="d-flex flex-column justify-content-center align-items-center h-100">
+      <h1 id="titleCategory" class="text-white fw-bold"><%= titleCategory %></h1>
+    </div>
+  </div>
+</div>
+
+<script>let titleCategory = "<%= titleCategory %>"</script>
+
+<section id="categories" class="pt-5">
+  <p id="descriptionCategory"><%= shortDescription %></p>
+  <div class="row">
+
+    <% for (let i=0 ; i<titlePlace.length ; i++) { %>
+
+      <div class="col-md-4 card-space">
+        <div class="card h-100">
+          <img src="/images/<%= imagePlace[i] %>" class="card-img-top" alt="<%= titlePlace[i] %>">
+          <div class="card-body">
+            <h4 class="card-title"><%= titlePlace[i] %></h4>
+            <h5 class="card-title"><%= datePlace[i] %></h5>
+          </div>
+          <div class="card-footer text-center">
+            <a href="/category/place/<%= idPlace[i] %>" class="btn btn-primary">Details</a>
+          </div>
+        </div>
+      </div>
+
+    <% } %>
+
+  </div>
+</section>
+
+<script>const title = "<%= titleCategory %>"</script>
+
+<section id="forms">
+  <div class="d-flex flex-wrap justify-content-around">
+    <button id="editCategoryBtn" class="btn btn-primary card-space">Edit Category</button>
+    <button id="deleteCategoryBtn" class="btn btn-primary card-space">Delete Category</button>
+    <a href="/category/place/add-place" class="btn btn-primary card-space">Add Place</a>
+    <p id="deleteFormResponse"></p>
+  </div>
+  <form id="editCategoryForm" hidden>
+    <div class="mb-3">
+      <label for="title" class="form-label">Change Title</label>
+      <input type="text" class="form-control" id="title">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Change Description</label>
+      <textarea class="form-control" id="description"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label">Change Image</label>
+      <input type="file" class="form-control" id="img" accept="image/*">
+    </div>
+    <button id="submitChanges" type="submit" class="btn btn-primary">Submit</button>
+    <p id="formResponse"></p>
+  </form>
+</section>
+
+<script><%- include('../public/javascripts/category.js') %></script>
+<%- include('./partials/footer') %>

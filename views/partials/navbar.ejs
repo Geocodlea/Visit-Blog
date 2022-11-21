@@ -1,0 +1,29 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../../">Visit Romania</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" id="hamburgerNavButton"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="../../">Home</a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <% for (let i=0 ; i<titleAllCategories.length  ; i++) { %>
+
+            <a class="dropdown-item" href="/category/<%= idAllCategories[i] %>"><%= titleAllCategories[i] %></a>
+
+            <% } %>
+
+          </div>
+        </div>
+        <a class="nav-link" href="/category/place/add-place">Add Place</a>
+        <a class="nav-link" href="/category/place/edit-place">Edit Place</a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,60 @@
+.mask-custom {
+  backdrop-filter: blur(2px);
+  background-color: rgba(79,79,79,0.65);
+}
+
+section {
+  padding: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  section {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  section {
+    padding: 2rem 5rem;
+  }
+}
+
+#categories {
+  background-image: linear-gradient(#ffffff, #919191);
+}
+
+#last-places-inserted, #forms {
+  background-image: linear-gradient(#919191, #ffffff);
+}
+
+.card-space {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  height: 10rem;
+}
+
+.error-block{
+  top: 100%;
+    left: 0px;
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.success-block{
+  top: 100%;
+    left: 0px;
+    color: #26a652;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#hamburgerNavButton {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.last-places-inserted-hidden{
+  display: none;
+}
