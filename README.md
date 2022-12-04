@@ -8,7 +8,6 @@ Mockup blog about the best places to visit in Romania
 - For running the project, write in terminal: npm start
 - Open a web browser and go to localhost:3000
 - Create, edit or delete some categories and places and that's it
-- You can also check it out online [here](https://warm-bayou-06838.herokuapp.com/)
 
 ### Things learned making this project
 
