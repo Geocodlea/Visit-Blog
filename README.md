@@ -12,7 +12,9 @@ Mockup blog about the best places to visit in Romania
 ### Things learned making this project
 
 > How to create a server and all routes necesary using ExpressJS
+
 > How to create, read, update and delete from a database using MongoDb and Mongoose
+
 > How to render templates using: Embedded JavaScript
 
 ### Would have been usefull for this project
