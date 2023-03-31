@@ -52,17 +52,6 @@ const getHomePage = async (req, res, next) => {
     return count;
   });
 
-  // De intrebat !!!
-  /*
-  const test = titleCategory.map((item) => {
-    Place.countDocuments({ category: item }, function (err, count) {
-      console.log(count);
-    });
-    // cum sa fac sa am count aici ?
-  });
-  console.log(test);
-*/
-
   res.render("index", {
     idAllCategories,
     titleAllCategories,
