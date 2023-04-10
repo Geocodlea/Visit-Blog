@@ -1,4 +1,4 @@
-# Visit Romania
+# Visit Blog
 
 Mockup blog about the best places to visit in Romania
 
