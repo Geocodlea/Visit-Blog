@@ -7,7 +7,8 @@
     "start": "node ./bin/www",
     "build": "npm run lint && npm run transpile",
     "lint": "eslint .",
-    "transpile": "babel src -d dist && copyfiles -u 1 \"./src/views/**/*\" dist"
+    "transpile": "babel src -d dist && copyfiles -u 1 \"./src/views/**/*\" dist",
+    "vercel-build": "echo hello"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
