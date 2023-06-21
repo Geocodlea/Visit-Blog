@@ -1,3 +1,15 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "bin/www",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/bin/www"
+    }
+  ]
 }
