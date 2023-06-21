@@ -22,6 +22,11 @@ require("./mockup");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.use((req, res, next) => {
+  res.setHeader("Content-Type", "application/javascript");
+  next();
+});
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
