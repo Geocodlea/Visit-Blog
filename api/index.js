@@ -141,11 +141,15 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
-app.listen(5001, () => {
-  console.log("Running on port 5001.");
-});
-// Export the Express API
-module.exports = app;
+// app.get("/api", (req, res) => {
+//     res.send("EUREKA on Vercel");
+//   });
+
+// app.listen(5001, () => {
+//   console.log("Running on port 5001.");
+// });
+// // Export the Express API
+// module.exports = app;
