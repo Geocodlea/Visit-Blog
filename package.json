@@ -2,6 +2,7 @@
   "name": "project-1",
   "version": "0.0.0",
   "private": true,
+  "main": "./bin/www",
   "scripts": {
     "start": "node ./bin/www",
     "build": "npm run lint && npm run transpile",
