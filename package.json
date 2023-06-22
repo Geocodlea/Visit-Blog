@@ -2,12 +2,8 @@
   "name": "visit-blog",
   "version": "1.0.0",
   "private": true,
-  "main": "./bin/www",
   "scripts": {
-    "start": "node ./bin/www",
-    "build": "npm run lint && npm run transpile",
-    "lint": "eslint .",
-    "transpile": "babel src -d dist && copyfiles -u 1 \"./src/views/**/*\" dist",
+    "start": "node ./api/index",
     "vercel-build": "echo hello"
   },
   "dependencies": {
@@ -23,12 +19,5 @@
     "multer": "^1.4.5-lts.1",
     "sharp": "^0.31.2",
     "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.22.5",
-    "@babel/core": "^7.22.5",
-    "@babel/preset-env": "^7.22.5",
-    "copyfiles": "^2.4.1",
-    "eslint": "^8.43.0"
   }
 }
