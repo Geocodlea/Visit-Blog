@@ -8,7 +8,7 @@
   />
   <div class="mask mask-custom">
     <div class="d-flex flex-column justify-content-center align-items-center h-100">
-      <h1 class="text-white fw-bold">Best Places in Romania</h1>
+      <h1 class="text-white fw-bold">Best Places to Visit</h1>
     </div>
   </div>
 </div>
@@ -85,18 +85,20 @@
       </div>
 
     <% } %>
-      
+
   </div>
 </section>
 
 <script>
+
   const titlePlaceLength = <%= titlePlace.length %>
 
   if(titlePlaceLength < 3){
     document.getElementById('last-places-inserted').classList.add('last-places-inserted-hidden')
   }
+
+  <%- include('../public/javascripts/add-category.js') %>
+
 </script>
 
-<script><%- include('../public/javascripts/add-category.js') %></script>
 <%- include('./partials/footer.ejs') %>
-

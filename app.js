@@ -13,10 +13,6 @@ const placeRouter = require("./routes/place");
 
 const app = express();
 
-app.get("/api", (req, res) => {
-  res.send("EUREKA on Vercel");
-});
-
 mongoose.set("strictQuery", true);
 mongoose.connect(`${process.env.MONGODB_URI}`);
 
