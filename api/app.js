@@ -13,17 +13,18 @@ app.get("/api", (req, res) => {
   res.send("EUREKA on Vercel");
 });
 
-const indexRouter = require("../src/routes/index");
-const categoryRouter = require("../src/routes/category");
-const placeRouter = require("../src/routes/place");
+const indexRouter = require("./src/routes/index");
+const categoryRouter = require("./src/routes/category");
+const placeRouter = require("./src/routes/place");
 
+mongoose.set("strictQuery", true);
 mongoose.connect(`${process.env.MONGODB_URI}`);
 
 // default mockup
-require("../src/mockup");
+require("./src/mockup");
 
 // view engine setup
-app.set("views", path.join(__dirname, "../src/views"));
+app.set("views", path.join(__dirname, "./src/views"));
 app.set("view engine", "ejs");
 
 app.use(logger("dev"));
